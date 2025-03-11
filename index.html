@@ -9,6 +9,8 @@
 
     <!-- this is how you write a comment describing your code in HTML. the body section is for all content that is visible. Keep it here! Semantic structure is just as important as syntax. -->
 
+    <body>
+
      <!-- HEADER -->
 
     <header>
@@ -27,19 +29,39 @@
         </nav>
     </header>
 
-    <body>
+     <!-- SLIDING MENU -->
+
+     <div class="side-menu">
+        <div class="close-btn">&times;</div>
+        <ul>
+            <li><a href="#">Bouquets</a></li>
+            <li><a href="#">Minimal</a></li>
+            <li><a href="#">Birthday Celebration</a></li>
+            <li><a href="#">Valentines Day</a></li>
+            <li><a href="#">Seasonal Arrangements</a></li>
+            <li><a href="#">Spring Basket</a></li>
+            <li><a href="#">Autumn Centerpiece</a></li>
+            <li><a href="#">Christmas Wreath</a></li>
+        </ul>
+    </div>
+
+   <!-- MAIN CONTENT -->
+    <main>
         <h1>Flowertales</h1>
         <h2>a flower space</h2>
         <h3>a space where flowers unfold 
             into arrangements, guided by seasonal rhythms and thoughtful composition.</h3>
-            <p>Hello world, this is created by Xhilda</p>
+        <p>Hello world, this is created by Xhilda</p>
         <div><a href="about.html">About</a></div>
-        <img src="images/flower.png">
-    </body>
+        <img src="images/flower.png" alt="A beautiful flower">
+    </main>
 
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2025 flowertales. all rights reserved.</p>
+        <p>&copy; 2025 flowertales. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script> <!-- Keep scripts at the end for better performance -->
     
-</body>     
+</body>
 </html>

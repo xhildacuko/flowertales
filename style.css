@@ -1,74 +1,175 @@
-/* Desktop / Header */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-/* Auto layout */
+/* HEADER */
 header {
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: flex-end;
-padding: 0px 60px;
-gap: 135px;
-
-position: absolute;
-width: 1440px;
-height: 100px;
-right: 0px;
-bottom: 1453px;
-
-
-/* Inside auto layout */
-flex: none;
-order: 4;
-flex-grow: 0;
-z-index: 4;
+    width: 100%;
+    padding: 0 60px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: #FFF;
+    position: absolute;
+    top: 0;
+    z-index: 4;
 }
 
-/* Hero section */
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1440px;
+}
 
-/* Auto layout */
+/* Logo */
+.logo {
+    font-size: 32px;
+    font-weight: 700; /* Poppins Semibold */
+    color: #666A3C; /* Green color from Figma */
+}
+
+/* Nav Items */
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 135px;
+}
+
+.nav-left li,
+.nav-right li {
+    font-size: 17px;
+    font-weight: 400; /* Poppins Regular */
+}
+
+.nav-left a,
+.nav-right a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+    color: #666A3C; /* Green hover effect */
+}
+
+/* SLIDING MENU */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Initially hidden */
+    width: 300px;
+    height: 100%;
+    background: #666A3C; /* Green background from Figma */
+    color: white;
+    padding: 20px;
+    transition: left 0.4s ease-in-out;
+}
+
+.side-menu ul {
+    list-style: none;
+    margin-top: 40px;
+}
+
+.side-menu ul li {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 400; /* Poppins Regular */
+}
+
+/* Sliding Menu Links */
+.side-menu ul li a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.side-menu ul li a:hover {
+    opacity: 0.8;
+}
+
+/* Close Button */
+.side-menu .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Show Menu */
+.side-menu.open {
+    left: 0;
+}
+
+/* HERO SECTION */
 .hero {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 0px 61px;
-gap: 10px;
-isolation: isolate;
-
-width: 1440px;
-height: 816px;
-
-/* Background/Beige */
-background: #FAF3ED;
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
-z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    text-align: center;
+    gap: 10px;
+    isolation: isolate;
+    width: 100%;
+    height: 816px;
+    background: #FAF3ED;
+    z-index: 0;
 }
 
-/* section with text and button  */
+.hero h1 {
+    font-size: 45px;
+    font-weight: 700; /* Poppins SemiBold */
+    color: #333;
+}
 
-/* Auto layout */
-.section text {
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 36px 61px;
-gap: 10px;
+.hero h2 {
+    font-size: 25px;
+    font-weight: 500;
+    color: #666A3C;
+}
 
-width: 1440px;
-height: 512px;
+/* SECTION WITH TEXT & BUTTON */
+.section-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 36px 61px;
+    gap: 10px;
+    width: 100%;
+    height: 512px;
+    background: #FAF3ED;
+    z-index: 1;
+}
 
-/* Background/Beige */
-background: #FAF3ED;
+.section-text p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+}
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
-z-index: 1;
+.section-text .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #666A3C;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.section-text .btn:hover {
+    background-color: #4d5330;
 }
