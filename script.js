@@ -3,13 +3,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const sideMenu = document.querySelector(".side-menu");
     const closeBtn = document.querySelector(".close-btn");
 
-    // Open the sliding menu
+    // Open the menu when "create +" is clicked
     menuToggle.addEventListener("click", function (event) {
         event.preventDefault();
         sideMenu.classList.add("open");
     });
 
-    // Close the sliding menu
+    // Close the menu when "X" is clicked
     closeBtn.addEventListener("click", function () {
         sideMenu.classList.remove("open");
     });
