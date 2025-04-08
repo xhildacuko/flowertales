@@ -7,61 +7,95 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-    <!-- this is how you write a comment describing your code in HTML. the body section is for all content that is visible. Keep it here! Semantic structure is just as important as syntax. -->
+    <!--LINKING A FONT-->
 
-    <body>
+<body>
 
-    <!-- HEADER -->
-
+    <!-- HEADER / NAVIGATION -->
     <header>
         <nav class="navbar">
             <ul class="nav-left">
-                <li>
-                    <a href="#" class="menu-toggle">create +</a>
+                <li class="create-menu">
+                    <span class="menu-toggle">create </span>
                 </li>
                 <li><a href="#">archive</a></li>
             </ul>
-            <div class="logo">flowertales</div>
+            <a href="index.html" class="logo">flowertales</a>
             <ul class="nav-right">
                 <li><a href="#">journal</a></li>
-                <li><a href="#">about</a></li>
+                <li><a href="about.html">about</a></li>
             </ul>
         </nav>
     </header>
 
-     <!-- SLIDING MENU -->
-     <div class="side-menu">
-        <div class="close-btn">&times;</div>
+    <!-- SLIDING MENU -->
+    <div class="side-menu">
+        <button class="close-btn">&times;</button>
         <ul>
-            <li><a href="#">Create</a></li>
-            <li class="menu-title">bouquets</li>
-            <li><a href="#">Minimal</a></li>
-            <li><a href="#">Birthday Celebration</a></li>
-            <li><a href="#">Valentine’s Day</a></li>
-            <li class="menu-title">seasonal arrangements</li>
-            <li><a href="#">Spring Basket</a></li>
-            <li><a href="#">Autumn Centerpiece</a></li>
-            <li><a href="#">Christmas Wreath</a></li>
+            <li class="menu-section">
+                <a href="#" class="section-title">bouquets</a>
+                <a href="minimal.html">minimal</a>
+                <a href="birthday.html">birthday celebration</a>
+                <a href="#">valentines day</a>
+            </li>
+            <li class="menu-section">
+                <a href="#" class="section-title">seasonal arrangements</a>
+                <a href="#">spring basket</a>
+                <a href="#">autumn centerpiece</a>
+                <a href="#">christmas wreath</a>
+            </li>
         </ul>
     </div>
 
-   <!-- MAIN CONTENT -->
-    <main>
-        <h1>Flowertales</h1>
-        <h2>a flower space</h2>
-        <h3>a space where flowers unfold 
-            into arrangements, guided by seasonal rhythms and thoughtful composition.</h3>
-        <p>Hello world, this is created by Xhilda</p>
-        <div><a href="about.html">About</a></div>
-        <img src="images/flower.png" alt="A beautiful flower">
-    </main>
+
+    <!-- HOMEPAGE IMAGE -->
+    <section class="hero"></section>
+
+    <!-- INTRODUCTION -->
+    <section class="intro-section">
+
+    <!-- Floating Cross Flower (behind content) -->
+    <img src="images/cross-flower.svg" 
+     class="floating-flower" 
+     id="floatingFlower" 
+     alt="floating flower" />
+  
+    <!-- Content Block -->
+    <div class="intro-content">
+      <div class="text-block">
+        <h2>
+          flowertales is a self-expressive space<br>
+          where creativity blooms. a space where flowers unfold<br>
+          into arrangements, guided by seasonal rhythms and<br>
+          thoughtful composition.
+        </h2>
+      </div>
+
+          <div class="buttons">
+            <a href="bouquets.html" class="btn outline">bouquets</a>
+            <a href="seasonal.html" class="btn outline">seasonal</a>
+          </div>
+
+        </div>
+      </section>
+
 
     <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2025 flowertales. all rights reserved.</p>
-    </footer>
+    <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-left-group">
+            <span class="footer-left">© flowertales 2025</span>
+            <span class="footer-center">all rights reserved</span>
+          </div>
+          <div class="footer-right">site by xhilda cuko</div>
+        </div>
+      </footer>
 
-    <script src="script.js"></script> <!-- Keep scripts at the end for better performance -->
+    
+    <!-- JavaScript Link -->
+    <script defer src="script.js"></script>
 
-</body>
+    </body>
 </html>
+
+
