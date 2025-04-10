@@ -1,4 +1,122 @@
- /* GENERAL RESET */
+/* --------------------------------------------
+   Responsive Design: Tablet (768px to 1024px)
+----------------------------------------------- */
+@media (max-width: 1024px) {
+  header {
+    padding: 0 30px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-left, .nav-right {
+    gap: 60px;
+  }
+
+  .intro-content {
+    padding: 90px 30px 30px;
+    gap: 40px;
+  }
+
+  .step-cards {
+    grid-template-columns: 1fr; /* Stack on tablets */
+  }
+
+  .bouquet-categories {
+    justify-content: center;
+    padding: 0 30px;
+    gap: 30px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 0;
+    align-items: flex-start;
+  }
+
+  .category-title h1, .category-title h2 {
+    font-size: 18px;
+  }
+}
+
+/* --------------------------------------------
+   Responsive Design: Mobile (up to 767px)
+----------------------------------------------- */
+@media (max-width: 767px) {
+  header {
+    padding: 0 20px;
+    height: 60px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .nav-left, .nav-right {
+    gap: 30px;
+    flex-direction: column;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .intro-content {
+    padding: 80px 20px 20px;
+    gap: 30px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .step-cards {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .bouquet-categories {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .bouquet-card {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .site-footer {
+    padding: 40px 20px;
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+  }
+
+  .footer-left-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .category-title h1, .category-title h2 {
+    font-size: 16px;
+  }
+
+  .breadcrumb {
+    padding: 0 20px;
+    font-size: 13px;
+  }
+}
+
+
+/* GENERAL RESET */
 * {
     margin: 0;
     padding: 0;
@@ -361,11 +479,98 @@ h1 {
     color: #666A3C;
   }
 
-  
-/* ========== BIRTHDAY PAGE ========== */
-/* CATEGORY HEADER */
+/* ========== BOUQUET ========== */
+/* BOUQUET HEADER */
 .category-header {
-    background-color: #7F844B; 
+  background-color: #666A3C; 
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 61px 30px 61px;
+  box-sizing: border-box;
+}
+
+.category-title {
+  width: 100%;
+  text-align: right;
+}
+
+.category-header h2 {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 320;
+  color: #FAF3ED;
+  margin: 0;
+}
+
+/* CATEGORIES GRID */
+.bouquet-categories {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 120px auto;
+  padding: 0 61px;
+  flex-wrap: wrap;
+}
+
+/* INDIVIDUAL CARD */
+.bouquet-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  height: auto;
+  border: 1px solid #000;
+  background-color: none;
+  text-decoration: none;
+}
+
+/* ICON */
+.bouquet-card .icon {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  padding: 0.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ICON IMAGE */
+.bouquet-card .icon img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* DIVIDER LINE */
+.bouquet-card .divider {
+  width: 100%;
+  height: 0.7px;
+  background-color: #000;
+}
+
+/* LABEL */
+.bouquet-card .label {
+  background-color: #999D6F;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.bouquet-card:hover .label {
+  background-color: #FEDD64;
+  color: #191A0F;
+}
+  
+/* ========== SUB PAGE ========== */
+/* CATEGORY HEADER */
+.category-header--subpage{
+    background-color: #666A3C; 
     width: 100%;
     height: 250px;
     display: flex;
@@ -374,12 +579,52 @@ h1 {
     padding: 0 61px 30px;
   }
   
-  .category-title h1 {
+  .category-header--subpage .category-title {
+    width: 100%;
+    text-align: left !important;  /* Override any center alignment */
+  }
+  
+  .category-header--subpage .category-title h1 {
     font-size: 20px;
     font-style: italic;
     font-weight: 320;
     color: #FAF3ED;
+    text-align: left !important;  /* Also override directly */
   }
+
+   /* BREADCRUMB */
+.breadcrumb {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 50px 61px 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #999D6F;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb li a {
+  color: #999D6F;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb li a:hover {
+  color: #E5E6DB;
+}
+
+/* Add the slash separator between items */
+.breadcrumb li + li::before {
+  content: "/";
+  margin: 0 3px;
+  color: #999D6F;
+}
 
 /* ACCORDION SECTION */
 .accordion-section {
