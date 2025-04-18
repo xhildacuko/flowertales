@@ -80,3 +80,16 @@ window.addEventListener("load", () => {
   animate();
 });
 
+// Mobile Version Sliding Menu
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileSlideMenu');
+  menu.classList.toggle('show');
+}
+
+function toggleSubMenu() {
+  const submenu = document.getElementById('subMenu');
+  submenu.classList.toggle('open');
+}
+
+
+

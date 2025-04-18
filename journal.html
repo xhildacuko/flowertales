@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flowertales</title>
+        <link rel="icon" href="images/menu-icon.svg" type="image/svg+xml" sizes="any">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+<body>
+
+    <!-- DESKTOP NAVIGATION -->
+    <header class="desktop-nav">
+        <nav class="navbar">
+        <ul class="nav-left">
+            <li class="create-menu"><span class="menu-toggle">create</span></li>
+        </ul>
+        <a href="index.html" class="logo">flowertales</a>
+        <ul class="nav-right">
+            <li><a href="journal.html">journal</a></li>
+            <li><a href="about.html">about</a></li>
+        </ul>
+        </nav>
+    </header>
+  
+    <!-- MOBILE NAVIGATION (only visible under 768px) -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-bar">
+        <div class="menu-icon" onclick="toggleMobileMenu()">
+            <img src="images/menu-icon.svg" alt="menu icon" />
+        </div>
+        <a href="index.html" class="mobile-logo">flowertales</a>
+        </div>
+    
+    <!-- Sliding Mobile Menu -->
+    <div class="mobile-slide-menu" id="mobileSlideMenu">
+  
+    <!-- Close Button -->
+    <button class="mobile-close-btn" onclick="toggleMobileMenu()">×</button>
+    
+        <ul>
+            <li class="expandable">
+            <button class="expand-toggle" onclick="toggleSubMenu()">
+                create <span class="plus">+</span>
+            </button>
+            <ul class="sub-menu" id="subMenu">
+                <li><a href="minimal.html">minimal</a></li>
+                <li><a href="birthday.html">birthday celebration</a></li>
+                <li><a href="valentines.html">valentines day</a></li>
+                <li><a href="spring.html">spring basket</a></li>
+                <li><a href="autumn.html">autumn centerpiece</a></li>
+                <li><a href="christmas.html">christmas wreath</a></li>
+            </ul>
+            </li>
+            <li><a href="journal.html">journal</a></li>
+            <li><a href="about.html">about</a></li>
+        </ul>
+        </div>
+    </div>
+
+    <!-- SLIDING MENU -->
+    <div class="side-menu">
+        <button class="close-btn">&times;</button>
+        <ul>
+            <li class="menu-section">
+                <a href="bouquets.html" class="section-title">bouquets</a>
+                <a href="minimal.html">minimal</a>
+                <a href="birthday.html">birthday celebration</a>
+                <a href="valentines.html">valentines day</a>
+            </li>
+            <li class="menu-section">
+                <a href="seasonal.html" class="section-title">seasonal arrangements</a>
+                <a href="spring.html">spring basket</a>
+                <a href="autumn.html">autumn centerpiece</a>
+                <a href="christmas.html">christmas wreath</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- JOURNAL PAGE HEADER -->
+    <section class="bouquet-header">
+        <img src="images/journal-header.svg" alt="bouquet header" class="bouquet-header-image" />
+    </section>
+
+    <!-- JOURNAL INTRO TEXT -->
+      <h2 class="subpage-title">journal</h2>
+
+      <p class="journal-intro-text">
+        check out the latest news and articles about the world of flowers.<br>
+        get inspired and meet the community.
+      </p>
+
+    <!-- JOURNAL CARDS --> <!-- Lists blog articles with overlay on hover -->
+
+      <section class="journal-section">
+        <div class="journal-grid">
+
+        <!-- Card 1 -->
+        <div class="journal-card">
+            <img src="images/article-card1.svg" alt="Article 1" class="journal-image" />
+            <div class="journal-overlay">
+            <h4>tips & tricks</h4>
+            <br>
+            <br>
+            <h3>LOCAL LOW BUDGET<br>
+                FLOWER MARKET</h3>
+            <br>
+            <p>
+                Whether your need a quick pick-me-up,<br>
+                or are planning an event and need to decorate, these flower stores<br>
+                are just the ticket.
+            </p>
+            <br>
+            <a href="https://www.blogto.com/fashion_style/2015/02/the_top_25_flower_shops_in_toronto_by_neighbourhood/" class="journal-link" target="_blank">learn more</a>
+            </div>
+        </div>
+  
+      <!-- Card 2 -->
+      <div class="journal-card">
+        <img src="images/article-card2.svg" alt="Article 2" class="journal-image" />
+        <div class="journal-overlay">
+          <h4>tips & tricks</h4>
+          <br>
+            <br>
+          <h3>HOW TO KEEP<br> 
+            FLOWERS FRESH</h3>
+            <br>
+          <p>With the right care and simple tricks,<br>
+            you can extend the life of your fresh-cut flowers and keep them looking vibrant<br>
+            for days or even weeks.</p>
+          <br>
+          <a href="https://plantisima.com/secret-flower-hacks-to-keep-your-bouquet-fresh-for-longer/" target="_blank" class="journal-link">learn more</a>
+        </div>
+      </div>
+  
+      <!-- Card 3 -->
+      <div class="journal-card">
+        <img src="images/article-card3.svg" alt="Article 3" class="journal-image" />
+        <div class="journal-overlay">
+          <h4>inspiration</h4>
+          <br>
+            <br>
+          <h3>VALENTINE'S IN BLOOM</h3>
+          <br>
+          <p>Whether you're planning a cozy night in, gifting flowers to your favorite person, or simply romanticizing your everyday, this Valentine’s Day guide is here<br>
+            to spark a little beauty</p>
+          <br>
+          <a href="https://ca.pinterest.com/themakehaus/inspo_red/" target="_blank" class="journal-link">learn more</a>
+        </div>
+      </div>
+  
+      <!-- Card 4 -->
+      <div class="journal-card">
+        <img src="images/article-card4.svg" alt="Article 4" class="journal-image" />
+        <div class="journal-overlay">
+          <h4>inspiration</h4>
+          <br>
+            <br>
+          <h3>BLOOM YOUR MIND</h3>
+          <br>
+          <p>Looking for a little floral magic to spark your creativity? We’ve found just the right place. This floral artist brings serious inspiration to every stem. </p>
+          <br>
+          <a href="https://www.instagram.com/floral_fantasy_tirane/" target="_blank" class="journal-link">learn more</a>
+        </div>
+      </div>
+  
+      <!-- Card 5 -->
+      <div class="journal-card">
+        <img src="images/article-card5.svg" alt="Article 5" class="journal-image" />
+        <div class="journal-overlay">
+          <h4>guide</h4>
+          <br>
+            <br>
+          <h3>BUILD YOUR<br>
+            OWN SPRING BASKET</h3>
+            <br>
+          <p>Are you feeling stuck or nervous about your spring basket? Here it is a guide full of light and pastel palette to welcome the season.</p>
+          <br>
+          <a href="https://www.thetatteredpew.com/how-to-make-a-flower-arrangement-in-a-basket/" target="_blank" class="journal-link">learn more</a>
+        </div>
+      </div>
+  
+      <!-- Card 6 -->
+      <div class="journal-card">
+        <img src="images/article-card6.svg" alt="Article 6" class="journal-image" />
+        <div class="journal-overlay">
+          <h4>editor's pick</h4>
+            <br>
+                <br>
+          <h3>FINDING BEAUTY<br>
+            IN SIMPLE FLOWERS</h3>
+          <br>
+          <p>Flora Photographica: The Evolution of Flowers in Photography. The power of capturing the world of flowers.</p>
+          <br>
+          <a href="https://londonflowerschool.com/journal/flora-photographica-the-evolution-of-flowers-in-photography-through-time" target="_blank" class="journal-link">learn more</a>
+        </div>
+      </div>
+  
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-left-group">
+            <span class="footer-left">© flowertales 2025</span>
+            <span class="footer-center">all rights reserved</span>
+          </div>
+          <div class="footer-right">site by xhilda cuko</div>
+        </div>
+    </footer>
+
+    
+    <!-- JavaScript Link -->
+    <script defer src="script.js"></script>
+
+    </body>
+</html>
+
+

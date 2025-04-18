@@ -1,120 +1,9 @@
-/* --------------------------------------------
-   Responsive Design: Tablet (768px to 1024px)
------------------------------------------------ */
-@media (max-width: 1024px) {
-  header {
-    padding: 0 30px;
-  }
-
-  .navbar {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .nav-left, .nav-right {
-    gap: 60px;
-  }
-
-  .intro-content {
-    padding: 90px 30px 30px;
-    gap: 40px;
-  }
-
-  .step-cards {
-    grid-template-columns: 1fr; /* Stack on tablets */
-  }
-
-  .bouquet-categories {
-    justify-content: center;
-    padding: 0 30px;
-    gap: 30px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    gap: 20px;
-    padding: 40px 0;
-    align-items: flex-start;
-  }
-
-  .category-title h1, .category-title h2 {
-    font-size: 18px;
-  }
-}
-
-/* --------------------------------------------
-   Responsive Design: Mobile (up to 767px)
------------------------------------------------ */
-@media (max-width: 767px) {
-  header {
-    padding: 0 20px;
-    height: 60px;
-  }
-
-  .navbar {
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .nav-left, .nav-right {
-    gap: 30px;
-    flex-direction: column;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-  }
-
-  .intro-content {
-    padding: 80px 20px 20px;
-    gap: 30px;
-  }
-
-  .buttons {
-    flex-direction: column;
-    gap: 20px;
-    padding: 0;
-    align-items: flex-start;
-  }
-
-  .step-cards {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .bouquet-categories {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .bouquet-card {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-
-  .site-footer {
-    padding: 40px 20px;
-    flex-direction: column;
-    gap: 20px;
-    height: auto;
-  }
-
-  .footer-left-group {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .category-title h1, .category-title h2 {
-    font-size: 16px;
-  }
-
-  .breadcrumb {
-    padding: 0 20px;
-    font-size: 13px;
-  }
-}
-
+/*
+  Author: Xhilda Cuko
+  Project: Flowertales Website (A3 Resource Website)
+    Description: Custom responsive styling for main pages, including navbar, hero, about, bouquet, journal, footer, and mobile navigation. 
+  Accessibility and clarity were prioritized throughout the code.
+*/
 
 /* GENERAL RESET */
 * {
@@ -127,45 +16,62 @@
 /* ========== NAV BAR ========== */
 /* HEADER */
 header {
-    width: 100%;
-    padding: 0 5%;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #FAF3ED;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #ccc;
+  width: 100%;
+  padding: 0 5%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FAF3ED;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #ccc;
 }
 
 /* NAVBAR */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
 }
 
 /* LOGO */
 .logo {
-    font-size: 2rem;
-    font-weight: 700;
-    align-items: center;
-    display: flex;
-    color: #666A3C;
-    text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #666A3C;
+  text-decoration: none;
+  font-family: Inter, sans-serif;
 }
 
 /* NAV ITEMS */
 .nav-left,
 .nav-right {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 135px;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 60px;
+}
+
+.nav-left li,
+.nav-right li {
+  display: flex;
+  align-items: center;
+  height: 70px;
+}
+
+
+/* Keep one side from collapsing */
+.nav-left {
+  justify-content: flex-start;
+}
+.nav-right {
+  justify-content: flex-end;
 }
 
 .nav-left a,
@@ -175,6 +81,7 @@ header {
     font-weight: 400;
     color: #666A3C;
     transition: color 0.3s;
+    line-height: 70px; /* Centers text vertically inside nav */
 }
 
 .nav-left a:hover,
@@ -187,14 +94,17 @@ header {
     cursor: pointer;
     font-size: 1rem;
     display: flex;
-    align-items: flex-end; 
+    align-items: center; 
     color: #666A3C;
-    margin-left: auto; 
 }
 
 /* HOVER EFFECT */
 .create-menu:hover {
     color: #B2B593;
+}
+
+.menu-icon {
+  display: none; /* hidden by default */
 }
 
 /* SLIDING MENU */
@@ -243,7 +153,6 @@ header {
     font-weight: 400;
     margin-bottom: 15px;
 }
-
 
 /* SECTIONS */
 .menu-section {
@@ -310,13 +219,6 @@ html, body {
     gap: 0;
 }
 
-/* RESPONSIVE ADJUSTMENTS */
-@media (max-width: 1024px) {
-    .hero {
-        height: 500px; /* Adjust height for tablets */
-    }
-}
-
 /* ========== INTRO SECTION ========== */
 /* INTRO SECTION */
 .intro-section {
@@ -342,7 +244,7 @@ html, body {
 }
 
 .text-block {
-    max-width: 920px;
+    max-width: 680px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -386,7 +288,6 @@ html, body {
 }
 
  /* FLOATING FLOWER */
-
 .floating-flower {
     position: absolute;
     top: 0;
@@ -397,121 +298,189 @@ html, body {
     z-index: 0;
 }
 
-
-@font-face {
-    font-family: 'alef-bold';
-    src: url('fonts/alef-bold.woff') format ('woff');
-    font-weight: bold;
-    font-style: bold;
-}
-
-h1 {
-    font-family: "alef-bold";
-    font-size: 200%;
-    text-align: center;
-}
-
 /* ========== ABOUT PAGE ========== */
-/* ABOUT SECTION*/
+/*MAIN CONTAINER */
 .about-section {
-    background: url('images/about-background-section.svg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    width: 100%;
-    height: 892px;
-  }
+  position: relative;
+  background-color: #FFF1C2;
+  padding-top: 70px; /* space for navbar */
+  overflow: hidden;
+}
 
-  .about-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 100px 60px 60px; 
-    display: flex;
-    justify-content: center;
-    align-items: center; /* fix: center image and text vertically */
-    gap: 60px;
-    flex-wrap: wrap;
-  }
-  
-  .about-image img {
-    width: 300px;
-    height: 480px;
-    border: 1.7px solid #333333;
-    background-color: #fff;
-    object-fit: cover;
-    flex-shrink: 0;
-    display: flex;
-  }
-  
-  .about-text {
-    background-color: #FAF3ED;
-    padding: 40px;
-    border: 1.7px solid #333333;
-    max-width: 530px;
-    height: 480px;
-    font-size: 16px;
-    line-height: 25px;
-    gap: 16px; /* adds spacing between paragraphs */
-  }
-  
-  .about-text h3 {
-    font-size: 22px;
-    font-weight: 500;
-    margin-bottom: 40px;
-    margin-top: 27px;
-    color: #191A0F;
-    gap: 100px;
-  }
-  
-  .about-text p {
-    margin-bottom: 27px;
-    color: #191A0F;
-    text-align: left;
-  }
+/* Wrapper for image and text box, layered above background */
+.about-container {
+  position: relative;
+  z-index: 2; /* ensures content sits above the background image */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 60px 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
 
-  .about-text a {
-    color: #191A0F;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .about-text a:hover {
-    color: #666A3C;
-  }
+/* FLOWER IMAGE BOX STYLING */
+.about-image img {
+  width: 300px;
+  height: 480px;
+  border: 1.2px solid #000;
+  background-color: #fff;
+  object-fit: cover;
+}
+
+/* TEXT BOX STYLING */
+.about-text {
+  background-color: #FAF3ED;
+  padding: 40px;
+  border: 1.2px solid #000;
+  max-width: 530px;
+  height: 480px;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.about-text h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 27px 0 40px 0;
+  color: #191A0F;
+}
+
+.about-text p {
+  margin-bottom: 27px;
+  color: #191A0F;
+  text-align: left;
+}
+
+/* LINK STYLING FOR INSTAGRAM */
+.about-text a {
+  color: #191A0F;
+  text-decoration: none;
+}
+
+/* HOVER EFFECT FOR INSTAGRAM LINK */
+.about-text a:hover {
+  color: #666A3C;
+}
+
+/* Wrapper for checkered background behind flower image and text */
+.about-background-wrapper {
+  position: absolute;
+  top: 70px; /* same height as fixed navbar */
+  left: 0;
+  width: 100%;
+  height: calc(100% + 60px); /* ensures background reaches bottom of section */
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Styling for the SVG checkered background image */
+.about-background-wrapper img.about-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 /* ========== BOUQUET ========== */
 /* BOUQUET HEADER */
-.category-header {
-  background-color: #666A3C; 
+.bouquet-header {
   width: 100%;
-  height: 250px;
-  display: flex;
-  align-items: flex-end;
-  padding: 0 61px 30px 61px;
-  box-sizing: border-box;
-}
-
-.category-title {
-  width: 100%;
-  text-align: right;
-}
-
-.category-header h2 {
-  font-size: 20px;
-  font-style: italic;
-  font-weight: 320;
-  color: #FAF3ED;
+  padding-top: 70px; 
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+/* BOUQUET HEADER IMAGE */
+.bouquet-header img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: top;
+}
+
+/* BOUQUET INTRO TEXT SECTION */
+.bouquet-intro {
+  background-color: #FAF3ED;
+  padding: 61px 61px 50px;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* Main Heading */
+.bouquet-intro h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 400;
+  color: #000;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  line-height: 42px;
+}
+
+/* Paragraph Text */
+.intro-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: #191A0F;
+  max-width: auto;
+  margin-bottom: 60px;
+  width: 660px;
+}
+
+/* Callout */
+.callout em{
+  font-family: 'EB Garamond', serif;
+  line-height: 25px;
+  color: #000;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}
+
+/* FONT FACES */
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/EBGaramond-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Regular.ttf') format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
 }
 
 /* CATEGORIES GRID */
+.bouquet-section {
+  background-color: #FAF3ED;
+  padding: 10px 0;
+}
+
+/* CATEGORIES BOUQUET GRID */
 .bouquet-categories {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  margin: 120px auto;
-  padding: 0 61px;
+  gap: 40px;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 15px auto 120px auto; 
+  padding: 0 20px; 
+  box-sizing: border-box;
 }
 
 /* INDIVIDUAL CARD */
@@ -519,10 +488,10 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 250px;
+  width: 270px;
   height: auto;
   border: 1px solid #000;
-  background-color: none;
+  background-color: #FFFAF7;
   text-decoration: none;
 }
 
@@ -567,54 +536,45 @@ h1 {
   color: #191A0F;
 }
   
-/* ========== SUB PAGE ========== */
-/* CATEGORY HEADER */
-.category-header--subpage{
-    background-color: #666A3C; 
-    width: 100%;
-    height: 250px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    padding: 0 61px 30px;
-  }
-  
-  .category-header--subpage .category-title {
-    width: 100%;
-    text-align: left !important;  /* Override any center alignment */
-  }
-  
-  .category-header--subpage .category-title h1 {
-    font-size: 20px;
-    font-style: italic;
-    font-weight: 320;
-    color: #FAF3ED;
-    text-align: left !important;  /* Also override directly */
-  }
+/* ========== SUB PAGE STEP-BY-STEP GUIDE ========== */
+/* CATEGORY GUIDE HEADER */
+.subpage-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 400;
+  color: #000;
+  margin-top: 25px;
+  margin-bottom: 5px;
+  line-height: 42px;
+  padding: 50px 61px 0;
+}
 
-   /* BREADCRUMB */
+/* BREADCRUMB */
 .breadcrumb {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  padding: 50px 61px 0;
+  padding: 10px 61px 0;
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   color: #999D6F;
 }
 
+/* BREADCRUMB ITEM */
 .breadcrumb li {
   display: flex;
   align-items: center;
 }
 
+/* BREADCRUMB LINK */
 .breadcrumb li a {
   color: #999D6F;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
+/* BREADCRUMB LINK HOVER */
 .breadcrumb li a:hover {
   color: #E5E6DB;
 }
@@ -678,6 +638,7 @@ h1 {
     content: "−";
   }
   
+  /* Change the color of the plus/minus icon */
   .accordion-item summary {
     border-bottom: 1px solid #000;
     transition: 
@@ -686,6 +647,7 @@ h1 {
       background-color 0.3s ease;
   }
   
+  /* Change the color of the plus/minus icon on hover */
   .accordion-item summary:hover {
     color: #BFBFBF;
     border-bottom: 1px solid #BFBFBF; /* this changes the underline on hover */
@@ -711,7 +673,8 @@ h1 {
       transform: translateY(0);
     }
   }
-   
+
+
   /* STEP BY STEP GUIDE */
 
   /* STEP CARD GRID (inside accordion) */
@@ -742,6 +705,7 @@ h1 {
     height: auto; /* allow height to grow based on text */
   }
   
+  /* STEP CARD IMAGE */
   .step-card:hover {
     transform: translateY(-4px);
   }
@@ -763,6 +727,157 @@ h1 {
     margin: 0;
   }
 
+  /*BLOOM HOVER EFFECT */
+  .bloom-hover {
+    color: #191A0F;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  /* HOVER EFFECT */
+  .bloom-hover:hover {
+    color: #666A3C;
+  }
+
+/* ========== JOURNAL PAGE ========== */
+/* JOURNAL SECTION */
+.journal-section {
+  background-color: none;
+  padding: 30px 61px 100px;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* JOURNAL HEADER IMAGE */
+.journal-intro-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: #191A0F;
+  text-align: center;
+  max-width: auto;
+  text-align: left;
+  margin: 20px 20px 61px 61px;
+}
+
+/* JOURNAL INTRO TEXT */
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); /* responsive */
+  gap: 40px; /* tighter and more consistent */
+  justify-content: center;
+  align-items: start;
+  padding: 0 80px;
+}
+
+/* JOURNAL CARD */
+.journal-card {
+  background-color: #FAF3ED;
+  border: 1.3px solid #000;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px; /* controls image top space */
+  height: 380px;
+}
+
+/* IMAGE WRAPPER */
+.journal-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* IMAGE STYLING */
+.journal-card img {
+  width: 240px;
+  height: 240px;
+  object-fit: contain;
+  border: 1.3px solid #000;
+  margin: 0 auto;
+}
+
+/* OVERLAY APPEARS ON HOVER */
+.journal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #FEDD64;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease; /* smooth fade-in effect */
+  text-align: center;
+}
+
+/* HOVER EFFECT */
+.journal-card:hover .journal-overlay {
+  opacity: 1;
+}
+
+/* JOURNAL OVERLAY TEXT */
+.journal-overlay h4 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+/* JOURNAL OVERLAY TITLE */
+.journal-overlay h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  line-height: 22px;
+  padding: 0 6px;
+  margin-top: 20px;
+}
+
+/* JOURNAL OVERLAY DESCRIPTION */
+.journal-overlay p {
+  font-size: 0.7rem;
+  font-weight: 300;
+  line-height: 15px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+/* JOURNAL OVERLAY LINK */
+.journal-overlay a.journal-link {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-decoration: underline;
+  color: #000;
+  transition: color 0.2s ease;
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .journal-section {
+    padding: 50px 30px;
+  }
+
+  .journal-overlay h3 {
+    font-size: 0.95rem;
+  }
+
+  .journal-overlay p {
+    font-size: 0.75rem;
+  }
+}
 
 /* ========== FOOTER ========== */
 /* FOOTER */
@@ -776,21 +891,24 @@ h1 {
     overflow: hidden;
   }
   
+  /* FOOTER INNER CONTAINER */
   .footer-inner {
     max-width: 1440px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     padding: 100px 0px;
     justify-content: space-between;
     align-items: flex-start;
     flex: 1 0 0;
   }
   
+  /* FOOTER LEFT GROUP */
   .footer-left-group {
     display: flex;
     gap: 140px;
   }
   
+  /* FOOTER LEFT, CENTER, RIGHT */
   .footer-left,
   .footer-center,
   .footer-right {
@@ -798,11 +916,517 @@ h1 {
     color: #000;
     display: flex;
   }
+  
+/* ========== MEDIA QUERIES ========== */
+  /* DESKTOP NAV VISIBLE ONLY ABOVE 768px */
+.desktop-nav {
+  display: block;
+}
+.mobile-nav {
+  display: none;
+}
 
-  @media (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      text-align: center;
-      gap: 8px;
-    }
+ /* ========== MEDIA QUERIES ========== */
+ @media (max-width: 768px) {
+  /* Mobile Nav Bar */
+  .mobile-nav {
+    display: block;
+    background-color: #FAF3ED;
+    padding: 10px 24px;
+    position: relative;
+    z-index: 1000;
   }
+
+  /* Mobile Nav Bar */
+  .mobile-nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Mobile Logo */
+  .menu-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  /* Mobile Menu Icon */
+  .menu-icon img {
+    width: 35px;
+    height: 35px;
+  }
+
+  /* Mobile Logo Text */
+  .mobile-logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #666A3C;
+    text-decoration: none;
+  }
+
+  /* Mobile Menu Button */
+  .mobile-slide-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    background-color: #7F844B;
+    color: #FAF3ED;
+    z-index: 9999;
+    transition: left 0.3s ease-in-out;
+    padding: 80px 24px;
+  }
+
+  /* Mobile Menu Button */
+  .mobile-slide-menu.show {
+    left: 0;
+  }
+
+  /* Mobile Menu Close Button */
+  .mobile-slide-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  /* Mobile Menu List Items */
+  .mobile-slide-menu li {
+    margin-bottom: 20px;
+  }
+
+  /* Mobile Menu Links */
+  .mobile-slide-menu a {
+    color: #FAF3ED;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+
+  /* Mobile Menu Links Hover */
+  .expand-toggle {
+    background: none;
+    border: none;
+    color: #FAF3ED;
+    font-size: 1rem;
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  .sub-menu li {
+    margin-bottom: 5px; 
+  }
+
+  .sub-menu {
+    display: none;
+    margin-top: 14px;
+    padding-left: 16px;
+  }
+
+  .sub-menu.open {
+    display: block;
+  }
+
+  /* Sub-menu Links */
+  .sub-menu a {
+    font-size: 0.9rem;
+    color: #FAF3ED;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .sub-menu a:hover {
+    color: #999D6F;
+  }
+
+  /* Mobile Close Button */
+  .mobile-close-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #FAF3ED;
+  cursor: pointer;
+  z-index: 10;
+}
+
+  /* Hide desktop nav on mobile */
+  .desktop-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  /* HERO SECTION RESPONSIVE */
+  .hero {
+    height: 360px;
+    margin-top: 0;
+    padding-top: 60px; /* Add padding instead of margin for spacing below fixed header */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+
+  /* INTRO SECTION */
+  .intro-section {
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .intro-content {
+    padding: 40px 30px 10px;
+    gap: 50px;
+  }
+
+  .text-block h2 {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    width: 95%;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
+    align-items: center;
+  }
+
+  .btn.outline {
+    width: 60%;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* FLOATING FLOWER */
+  .floating-flower {
+    width: 80px;
+    top: 10px;
+    left: 10px;
+  }
+
+  /* ABOUT SECTION */
+  .about-section {
+    background-color: #FFF1C2;
+    padding-top: 70px;
+    padding-bottom: 60px;
+  }
+
+  /* ABOUT CONTAINER BACKGROUND */
+  .about-background-wrapper {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* ABOUT BACKGROUND IMAGE */
+  .about-background {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ABOUT BACKGROUND IMAGE */
+  .about-background-wrapper img.about-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* this makes it responsive */
+    object-position: center;
+    display: block;
+  }
+
+  /* ABOUT CONTAINER */
+  .about-container {
+    position: relative;
+    z-index: 2;
+    flex-direction: column;
+    padding: 30px 20px 100px;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    text-align: center; /* optional if needed */
+  }
+
+  /* ABOUT IMAGE AND TEXT BOX */
+  .about-image img,
+  .about-text {
+  max-width: 320px;
+  width: 100%;
+  border: 1.2px solid #000; /* Ensure border matches */
+  background-color: #FAF3ED;   /* Optional if you want them to visually match */
+}
+
+  .about-image img {
+    width: 85%;
+    max-width: 320px;
+    height: auto;
+    border: 1.2px solid #000;
+  }
+
+  .about-text {
+    width: 100%;
+    max-width: 90%;
+    height: auto;
+    padding: 30px 20px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .about-text h3 {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .about-text p {
+    margin-bottom: 16px;
+  }
+  
+  .about-text a {
+    color: #191A0F;
+    text-decoration: none;
+  }
+
+  .about-text a:hover {
+    color: #666A3C;
+  }
+  
+  /* JOURNAL HEADER IMAGE */
+  .bouquet-header {
+    margin-top: 0;
+    background-size: cover;
+    background-position: center;
+    width: 610px;
+    height: 100%;
+    overflow: hidden;
+    margin-top: -70px; /* <-- Fixes the top gap from fixed navbar */
+  }
+
+  /* BOUQUET HEADER IMAGE - applied to all the main pages boququets, seasona, step-by-step guides, and journal */ 
+  .bouquet-header img {
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* JOURNAL INTRO TEXT */
+  .subpage-title {
+    font-size: 1.1rem;
+    padding: 30px 24px 10px;
+    line-height: 1.4;
+  }
+
+  .journal-intro-text {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    padding: 0 24px;
+    margin: 10px 0 40px;
+    text-align: left;
+    width: 380px;
+  }
+
+  /* Breadcrumbs */
+  .breadcrumb {
+    padding: 0 24px;
+    font-size: 13px;
+    flex-wrap: wrap;
+    gap: 4px;
+    line-height: 1.4;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+  }
+
+  .breadcrumb li + li::before {
+    margin: 0 4px;
+  }
+
+/* MAIN CATEGORIES BOUQUETS/ SEASONAL*/
+/* INTRO TEXT SECTION */
+.bouquet-intro {
+  padding: 40px 24px 30px;
+}
+
+.bouquet-intro h2 {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.intro-text {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-bottom: 30px;
+  width: 300px;
+}
+
+/* Callout */
+.callout em {
+  font-size: 0.9rem !important;
+  line-height: 0.8 !important;
+  font-style: italic;
+  width: 250px !important;
+}
+
+/* CATEGORIES GRID */
+.bouquet-section {
+  padding: 10px 0 60px;
+}
+
+/* CATEGORIES BOUQUET GRID - applied even to seasonal page*/
+.bouquet-categories {
+  gap: 24px;
+  padding: 0 16px;
+  margin: 20px auto 80px;
+}
+
+/* INDIVIDUAL CARD */
+.bouquet-card {
+  width: 100%;
+  max-width: 220px;
+}
+
+.bouquet-card .label {
+  font-size: 15px;
+  padding: 12px 0;
+}
+
+/*STEP BY STEP GUIDE */
+.accordion-section {
+  padding: 0 24px;
+  margin: 40px 0;
+  min-height: 350px;
+  padding-bottom: 100px;
+  margin-top: 50px;
+  }
+
+  .step-cards {
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 50px;
+  padding: 0 5px;
+  }
+
+  .step-card {
+  padding: 20px;
+  font-size: 10px;
+  }
+
+  .step-card h4 {
+  font-size: 18px;
+  margin-bottom: 30px;
+  }
+
+  .step-card p {
+  font-size: 13px;
+  line-height: 1.5;
+  }
+
+  .accordion-item summary {
+  font-size: 15px;
+  padding: 12px 0;
+  }
+
+  .accordion-content {
+  font-size: 14px;
+  line-height: 1.6;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    padding: 20px 16px;
+    height: auto;
+  }
+
+  /* FOOTER INNER CONTAINER */
+  .footer-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 24px; /* space between items */
+    flex-wrap: nowrap;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  /* FOOTER LEFT GROUP */
+  .footer-left-group {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  /* FOOTER LEFT, CENTER, RIGHT */
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    font-size: 10px;
+    color: #000;
+    white-space: nowrap;
+  }
+
+  /* FOOTER LEFT, CENTER, RIGHT */
+  .footer-right {
+    margin-left: 20px;
+  }
+}
+/* ========== END OF MEDIA QUERIES ========== */
+
+/* ========== FOCUS STYLES ========== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.summary:focus-visible {
+  outline: 2px dashed #999D6F;
+  outline-offset: 4px;
+}
+
+/* 
+  ==========================================
+  Author: Xhilda Cuko
+  Project: Flowertales Website (A3 Resource Website)
+  Course: GRPH-2010-501
+  Instructor: Chris Lange
+  Date: 18/ 05/ 2025
+  Credits:
+  - Fonts: 'Poppins' by Indian Type Foundry, 'EB Garamond' by Georg Duffner
+  - Icons & illustrations: All custom made by Xhilda Cuko
+  - Flower images: All of them are from Pexels.com, by the artist: cottonbro studio
+  - Header images: Checkered background by Xhilda Cuko
+  - Journal images: All of them are from Pinterest board, by the account: @London Flower School
+  - Built and tested using: Google Chrome, Firefox, Edge
+  - Accessibility Checklist followed from: https://www.a11yproject.com/checklist/
+
+  Description:
+  This stylesheet defines the layout and style rules for the responsive and accessible design of the Flowertales resource website, designed with a focus on usability, readability, and aesthetic clarity.
+  ==========================================
+*/
+
+/* 
+  ==========================================
+  Thank You 💐
+
+  Thank you to my professor, and classmates, especially Miriana who supported me throughout this project.
+  This website is dedicated to those who believe in the magic of storytelling through flowers.
+
+  — Xhilda Cuko 🌼
+  ==========================================
+*/
+
+

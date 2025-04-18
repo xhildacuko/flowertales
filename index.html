@@ -4,29 +4,61 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Flowertales</title>
+        <link rel="icon" href="images/menu-icon.svg" type="image/svg+xml" sizes="any">
         <link rel="stylesheet" href="style.css">
     </head>
 
-    <!--LINKING A FONT-->
-
 <body>
 
-    <!-- HEADER / NAVIGATION -->
-    <header>
-        <nav class="navbar">
-            <ul class="nav-left">
-                <li class="create-menu">
-                    <span class="menu-toggle">create </span>
-                </li>
-                <li><a href="#">archive</a></li>
-            </ul>
-            <a href="index.html" class="logo">flowertales</a>
-            <ul class="nav-right">
-                <li><a href="#">journal</a></li>
-                <li><a href="about.html">about</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- DESKTOP NAVIGATION -->
+<header class="desktop-nav">
+  <nav class="navbar">
+    <ul class="nav-left">
+      <li class="create-menu"><span class="menu-toggle">create</span></li>
+    </ul>
+    <a href="index.html" class="logo">flowertales</a>
+    <ul class="nav-right">
+      <li><a href="journal.html">journal</a></li>
+      <li><a href="about.html">about</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- MOBILE NAVIGATION (only visible under 768px) -->
+<div class="mobile-nav">
+  <div class="mobile-nav-bar">
+    <div class="menu-icon" onclick="toggleMobileMenu()">
+      <img src="images/menu-icon.svg" alt="menu icon" />
+    </div>
+    <a href="index.html" class="mobile-logo">flowertales</a>
+  </div>
+
+  <!-- Sliding Mobile Menu -->
+  <div class="mobile-slide-menu" id="mobileSlideMenu">
+
+    <!-- Close Button -->
+  <button class="mobile-close-btn" onclick="toggleMobileMenu()">×</button>
+
+    <ul>
+      <li class="expandable">
+        <button class="expand-toggle" onclick="toggleSubMenu()">
+          create <span class="plus">+</span>
+        </button>
+        <ul class="sub-menu" id="subMenu">
+          <li><a href="minimal.html">minimal</a></li>
+          <li><a href="birthday.html">birthday celebration</a></li>
+          <li><a href="valentines.html">valentines day</a></li>
+          <li><a href="spring.html">spring basket</a></li>
+          <li><a href="autumn.html">autumn centerpiece</a></li>
+          <li><a href="christmas.html">christmas wreath</a></li>
+        </ul>
+      </li>
+      <li><a href="journal.html">journal</a></li>
+      <li><a href="about.html">about</a></li>
+    </ul>
+  </div>
+</div>
+
 
     <!-- SLIDING MENU -->
     <div class="side-menu">
@@ -39,10 +71,10 @@
                 <a href="valentines.html">valentines day</a>
             </li>
             <li class="menu-section">
-                <a href="#" class="section-title">seasonal arrangements</a>
-                <a href="#">spring basket</a>
-                <a href="#">autumn centerpiece</a>
-                <a href="#">christmas wreath</a>
+                <a href="seasonal.html" class="section-title">seasonal arrangements</a>
+                <a href="spring.html">spring basket</a>
+                <a href="autumn.html">autumn centerpiece</a>
+                <a href="christmas.html">christmas wreath</a>
             </li>
         </ul>
     </div>
@@ -64,9 +96,9 @@
     <div class="intro-content">
       <div class="text-block">
         <h2>
-          flowertales is a self-expressive space<br>
-          where creativity blooms. a space where flowers unfold<br>
-          into arrangements, guided by seasonal rhythms and<br>
+          flowertales is a self-expressive space
+          where creativity blooms. a space where flowers unfold
+          into arrangements, guided by seasonal rhythms and
           thoughtful composition.
         </h2>
       </div>
