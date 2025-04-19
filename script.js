@@ -1,3 +1,4 @@
+// Sliding Menu animation
 document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.querySelector(".create-menu");
     const sideMenu = document.querySelector(".side-menu");
@@ -90,6 +91,34 @@ function toggleSubMenu() {
   const submenu = document.getElementById('subMenu');
   submenu.classList.toggle('open');
 }
+
+// Floating flower animation for mobile only
+
+window.addEventListener("load", () => {
+  const flower = document.getElementById("floatingFlower");
+
+  // Only run on mobile
+  if (window.innerWidth <= 768) {
+    let floatY = 0;
+    let direction = 1;
+
+    // Set base position
+    const section = document.querySelector(".intro-section");
+    const rect = section.getBoundingClientRect();
+    const baseX = rect.width * 0.85;
+    const baseY = rect.height * 0.4;
+
+    function animateMobile() {
+      floatY += direction * 0.3;
+      if (floatY > 8 || floatY < -8) direction *= -1;
+
+      flower.style.transform = `translate(${baseX}px, ${baseY + floatY}px) translate(-50%, -50%)`;
+      requestAnimationFrame(animateMobile);
+    }
+
+    animateMobile();
+  }
+});
 
 
 

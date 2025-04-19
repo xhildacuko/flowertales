@@ -1104,9 +1104,10 @@ html, body {
 
   /* FLOATING FLOWER */
   .floating-flower {
-    width: 80px;
+    width: 90px; /* smaller flower */
     top: 10px;
     left: 10px;
+    transform: translate(0, 0); /* reset center translation if needed */
   }
 
   /* ABOUT SECTION */
@@ -1345,6 +1346,19 @@ html, body {
   .accordion-content {
   font-size: 14px;
   line-height: 1.6;
+  }
+
+  /*BLOOM HOVER EFFECT */
+  .bloom-hover {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .bloom-hover:hover {
+    color: #666A3C;
   }
 
   /* FOOTER */
